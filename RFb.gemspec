@@ -12,8 +12,24 @@ Gem::Specification.new do |s|
   s.date = %q{2010-02-11}
   s.description = %q{RubyFacebook interacts with Facebook REST API via JSON. No XML to deal with, no parsers needed, reduced verbosity, increased happiness. Ruby1.9 required. Fork it, please!}
   s.email = %q{makevoid@gmail.com}
+  s.extra_rdoc_files = [
+    "README.markdown"
+  ]
   s.files = [
-    "VERSION"
+    "README.markdown",
+     "RFb.gemspec",
+     "Rakefile",
+     "VERSION",
+     "init.rb",
+     "lib/r_fb.rb",
+     "lib/r_fb/configurable.rb",
+     "lib/r_fb/cookie.rb",
+     "lib/r_fb/exceptions.rb",
+     "lib/r_fb/fql.rb",
+     "lib/r_fb/methods.rb",
+     "lib/r_fb/parser.rb",
+     "lib/r_fb/session.rb",
+     "lib/r_fb/user.rb"
   ]
   s.homepage = %q{http://github.com/makevoid/RFb}
   s.rdoc_options = ["--charset=UTF-8"]
