@@ -2,18 +2,19 @@
 
 **RubyFacebook** - interact with Facebook REST API (json) - rails3 enabled
 
-RubyFacebook interacts with Facebook REST API via JSON. No XML to deal with, no parsers needed, reduced verbosity, increased happiness. Ruby1.9 required.
+Share datas with Facebook via JSON with RFb! No XML to deal with, no parsers needed, reduced verbosity, increased happiness. Ruby1.9 required.
+
 
 ## Installation
 
-  gem install RFb
+    gem install RFb
 
 
 ## Bundling
 
 to bundle RFb, in your Gemfile:
   
-  gem 'RFb', :require => 'r_fb'
+    gem 'RFb', :require => 'r_fb'
 
 
 ## Configuration
