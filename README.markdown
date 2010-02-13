@@ -78,6 +78,18 @@ a shorter version:
     User.new(fb_id: 1218562195)
   
   
+  
+# Setup sessions
+
+build better rails3 controllers-model api and document... I'll create an example project
+
+## Getting friends
+
+    RFb::User.new(fb_id: @current_user.fb_id).friends
+
+result (an array of users properties):
+
+    [{"current_location"=>{"city"=>"Buffalo", "state"=>"New York", "country"=>"United States", "zip"=>"14623"}, "first_name"=>"Ali", "name"=>"Ali Babloo", "pic"=>"http://profile.ak.fbcdn.net/v230/1615/8/s1027654249_4327.jpg", "status"=>{"message"=>"", "time"=>0, "status_id"=>0}, "timezone"=>-8, "has_added_app"=>true, "locale"=>"en_US", "profile_url"=>"http://www.facebook.com/dark14horse", "username"=>"dark14horse"}, {..........}, {...}]
 
 more docs will come when session handling API will be solid enough!
   

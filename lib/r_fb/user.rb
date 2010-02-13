@@ -33,6 +33,7 @@ module RFb
     end
   
     def friends
+      raise self.inspect
       Fql.query("SELECT #{FIELDS.join(", ")} FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=#{self.fb_id}) AND has_added_app = 1 ")
     end
   
