@@ -4,7 +4,7 @@ require 'json'
 
 module RFb
   PATH = "r_fb"
-  PATH = File.expand_path("../r_fb", __FILE__)
+  #PATH = File.expand_path("../r_fb", __FILE__)
   require "#{PATH}/exceptions"
   require "#{PATH}/configurable"
   require "#{PATH}/fql"
