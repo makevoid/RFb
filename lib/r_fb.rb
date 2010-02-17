@@ -3,14 +3,15 @@ require 'net/http'
 require 'json'
 
 module RFb
-  @@path = "r_fb"#File.expand_path("../r_fb", __FILE__)
-  require "#{@@path}/exceptions"
-  require "#{@@path}/configurable"
-  require "#{@@path}/fql"
-  require "#{@@path}/methods"
-  require "#{@@path}/parser"
-  require "#{@@path}/session"
-  require "#{@@path}/user"
+  PATH = "r_fb"
+  PATH = File.expand_path("../r_fb", __FILE__)
+  require "#{PATH}/exceptions"
+  require "#{PATH}/configurable"
+  require "#{PATH}/fql"
+  require "#{PATH}/methods"
+  require "#{PATH}/parser"
+  require "#{PATH}/session"
+  require "#{PATH}/user"
   
   SERVER = "www.facebook.com"
   API_PATH = "#{SERVER}/restserver.php"

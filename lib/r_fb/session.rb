@@ -4,11 +4,14 @@ module RFb
      attr_accessor :params
      def initialize(params={})
        @params = filter_session_params(params)
-       @@session_key = params["fb_sig_session_key"]
+       @@rfb_session_key = params["fb_sig_session_key"]
      end
 
      def self.session_key
-       @@session_key
+       @@rfb_session_key
+     end
+     def self.session_key=(ses)
+       @@rfb_session_key = ses
      end
 
      def logged_in?

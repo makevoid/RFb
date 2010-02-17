@@ -6,6 +6,7 @@ module RFb
     
     attr_accessor :fb_id
     attr_accessor :user
+    attr_accessor :session
     FIELDS.map do |field|
       attr_accessor field
     end
@@ -16,6 +17,8 @@ module RFb
       end
       @user = attrs[:user]
       @fb_id = attrs[:fb_id]
+      @session = attrs[:session]
+      Session.session_key = @session unless @session.nil?
     end
     
     def self.first(attrs={})
@@ -32,12 +35,13 @@ module RFb
       u = User.new(attrs.merge(:user => user)).select_all
     end
   
+    # use FIELDS.join(", ") instead of uid to select other datas
     def friends
-      Fql.query("SELECT #{FIELDS.join(", ")} FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=#{self.fb_id}) AND has_added_app = 1 ")
+      Fql.query("SELECT uid FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=#{self.fb_id}) AND has_added_app = 1")
     end
 
-    def friends_nonapp
-      Fql.query("SELECT #{FIELDS.join(", ")} FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=#{self.fb_id}) AND has_added_app = 0 ")
+    def friends_nonapp(limit=true)
+      Fql.query("SELECT uid FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1=#{self.fb_id}) AND has_added_app = 0#{"  LIMIT 30" if limit}")
     end
   
     def is_app_user?
