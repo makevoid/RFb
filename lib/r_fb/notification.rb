@@ -1,8 +1,6 @@
 module RFb
   class Notification
     
-    INVITE = "Sell your things to your friends and other facebook users. <fb:req-choice url='http://apps.facebook.com/alibazaar/' label='Add Ali Bazaar' />"
-    
     # usage:
     # Notification.send(to_ids: recipients_ids, notification: RFB::Notification::INVITE)
     #
